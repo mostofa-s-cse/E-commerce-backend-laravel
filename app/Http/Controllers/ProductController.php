@@ -26,9 +26,9 @@ class ProductController extends Controller
     {
         $result = Product::where('id', $id)->delete();
         if ($result) {
-            return ["result" => "Product has been delete"];
+            return ["success" => "Product has been delete"];
         } else {
-            return ["result" => "Operation faild"];
+            return ["error" => "Operation faild"];
         }
     }
     function getProduct($id)
@@ -50,7 +50,7 @@ class ProductController extends Controller
     }
     function search($key)
     {
-        return Product::where('name','Like',"%$key%")->get();
+        return Product::where('name', 'Like', "%$key%")->get();
     }
 
 }
