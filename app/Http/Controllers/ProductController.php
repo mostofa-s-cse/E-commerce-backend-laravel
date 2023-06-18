@@ -77,13 +77,9 @@ class ProductController extends Controller
             //echo "request : $request->image";
             $product->name = $request->name;
             $product->description = $request->description;
-      
-            if($request->image) {
- 
+            if($request->image){
                 // Public storage
-                
                 $storage = Storage::disk('public');
-      
                 // Old iamge delete
                 if($storage->exists($product->image))
                     $storage->delete($product->image);

@@ -45,8 +45,7 @@ class ProductStoreRequest extends FormRequest
                 'image.required' => 'Image is required!',
                 'description.required' => 'Descritpion is required!'
             ];
-        } 
-        else {
+        } else {
             return [
                 'name.required' => 'Name is required!',
                 'description.required' => 'Descritpion is required!'
