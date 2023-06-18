@@ -24,13 +24,12 @@ Route::get('products/{id}', [ProductController::class, 'show']);
 Route::post('products', [ProductController::class, 'store']); 
 Route::put('productsupdate/{id}', [ProductController::class, 'update']);
 Route::delete('productdelete/{id}', [ProductController::class, 'destroy']);
-
-
+Route::get('search/{key}',[ProductController::class,'search']);
 Route::post('signup',[UserController::class,'signup']);
 Route::post('login',[UserController::class,'login']);
-Route::delete('delete/{id}',[ProductController::class,'delete']);
-Route::get('product/{id}',[ProductController::class,'getProduct']);
-Route::put('updateproduct/{id}',[ProductController::class,'updateProduct']);
+// Route::delete('delete/{id}',[ProductController::class,'delete']);
+// Route::get('product/{id}',[ProductController::class,'getProduct']);
+// Route::put('updateproduct/{id}',[ProductController::class,'updateProduct']);
 
-Route::get('search/{key}',[ProductController::class,'search']);
+
 

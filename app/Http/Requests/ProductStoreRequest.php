@@ -25,12 +25,14 @@ class ProductStoreRequest extends FormRequest
         if(request()->isMethod('post')) {
             return [
                 'name' => 'required|string|max:258',
+                'price'=>'required',
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'description' => 'required|string'
             ];
         } else {
             return [
                 'name' => 'required|string|max:258',
+                'price'=>'required',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'description' => 'required|string'
             ];
@@ -43,11 +45,13 @@ class ProductStoreRequest extends FormRequest
             return [
                 'name.required' => 'Name is required!',
                 'image.required' => 'Image is required!',
+                'price'=>'Price is required!',
                 'description.required' => 'Descritpion is required!'
             ];
         } else {
             return [
                 'name.required' => 'Name is required!',
+                'price'=>'Price is required!',
                 'description.required' => 'Descritpion is required!'
             ];   
         }

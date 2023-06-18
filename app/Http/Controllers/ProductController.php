@@ -29,6 +29,7 @@ class ProductController extends Controller
             // Create Product
             Product::create([
                 'name' => $request->name,
+                'price' => $request->price,
                 'image' => $imageName,
                 'description' => $request->description
             ]);
@@ -76,6 +77,7 @@ class ProductController extends Controller
       
             //echo "request : $request->image";
             $product->name = $request->name;
+            $product->price = $request->price;
             $product->description = $request->description;
             if($request->image){
                 // Public storage
@@ -132,7 +134,6 @@ class ProductController extends Controller
             'message' => "Product successfully deleted."
         ],200);
     }
-    //
     // function addProduct(Request $req)
     // {
     //     $product = new Product;
